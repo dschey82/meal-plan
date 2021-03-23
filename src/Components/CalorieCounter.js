@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const CalorieCounter = (props) => {
-    <div class="CalorieCounter">
+const CalorieCounter = props => (
+    <div>
         <header>Calorie Counter!</header>
     </div>
-};
+);
+
+export default CalorieCounter;

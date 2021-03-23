@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import 'Components/CalorieCounter.js'
+import CalorieCounter from './Components/CalorieCounter.js'
 
 function App() {
   return (
