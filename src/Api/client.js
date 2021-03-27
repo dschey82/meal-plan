@@ -12,7 +12,7 @@ class Client {
 
     async getMeals() {
         var response = await axios.get(`${this.apiBase}/facts/`);
-        console.log(response.data);
+        console.log(response.data.body);
         return response;
     }
     
