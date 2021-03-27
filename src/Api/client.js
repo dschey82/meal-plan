@@ -9,10 +9,16 @@ class Client {
         else
             this.apiBase = url;
     }
+
+    async getMeals() {
+        var response = await axios.get(`${this.apiBase}/facts/`);
+        console.log(response.data);
+        return response;
+    }
     
     // search for existing meals based on entry
     async getMealById(id) {
-        var response = await axios.get(`${this.apiBase}/facts/${id}`);
+        var response = await axios.get(`${this.apiBase}/facts/${id}`, {mode: 'cors'});
         console.log(response.data);
         return response;
     }

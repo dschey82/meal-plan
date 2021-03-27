@@ -4,7 +4,13 @@ import Client from '../Api/client.js';
 const MealSubmit = props => {
     const [input, setInput] = useState('');
 
-    const handleMealSubmit = () => {
+    const handleTextChange = async (event) => {
+        setInput(event.target.value);
+        var client = new Client();
+        await client.getMeals();        
+    }
+
+    const handleMealSubmit = async () => {
         var client = new Client();
         client.getMealById(0);
         setInput('');
@@ -15,7 +21,7 @@ const MealSubmit = props => {
             <input  
                 type="text"
                 value={input}
-                onChange={event => setInput(event.target.value)}
+                onChange={handleTextChange}
                 placeholder="Meal name"
                 required
             />
