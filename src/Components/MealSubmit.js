@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
+import Client from '../Api/client.js';
 
 const MealSubmit = props => {
     const [input, setInput] = useState('');
 
     const handleMealSubmit = () => {
-        // check if meal exists in database
-        // gather nutrition info for meal
-        // add meal entry for user
+        var client = new Client();
+        client.getMealById(0);
         setInput('');
     };
 
