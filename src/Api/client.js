@@ -12,7 +12,7 @@ class Client {
     
     // search for existing meals based on entry
     async getMealById(id) {
-        var response = await axios.get(`https://${this.apiBase}/facts/${id}`);
+        var response = await axios.get(`${this.apiBase}/facts/${id}`);
         console.log(response.data);
         return response;
     }
