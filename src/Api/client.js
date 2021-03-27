@@ -2,10 +2,17 @@ import axios from 'axios';
 
 // class for communicating with api gateway
 class Client {
-    const apiBase = "https://m9omgndch4.execute-api.us-east-2.amazonaws.com/dev";
+    constructor(url)
+    {
+        if (url == null)
+            this.apiBase = "https://m9omgndch4.execute-api.us-east-2.amazonaws.com/dev";
+        else
+            this.apiBase = url;
+    }
+    
     // search for existing meals based on entry
-    function getMealById(id) {
-        var response = await axios.get(`https://${apiBase}/facts/${id}`);
+    async getMealById(id) {
+        var response = await axios.get(`https://${this.apiBase}/facts/${id}`);
         console.log(response.data);
         return response;
     }
@@ -13,3 +20,5 @@ class Client {
 
     // add meal entry
 }
+
+export default Client;
