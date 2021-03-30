@@ -10,21 +10,21 @@ class Client {
             this.apiBase = url;
     }
 
-    async getMeals() {
+    async getMealFacts() {
         var response = await axios.get(`${this.apiBase}/facts/`);
         console.log(response.data.body);
         return response;
     }
     
-    // search for existing meals based on entry
-    async getMealById(id) {
-        var response = await axios.get(`${this.apiBase}/facts/${id}`, {mode: 'cors'});
+    async getMealFactsById(id) {
+        var response = await axios.get(`${this.apiBase}/facts/${id}`);
         console.log(response.data);
         return response;
     }
-    // add meal nutrition information
+    
+    async putMealFacts(params) {
 
-    // add meal entry
+    }
 }
 
 export default Client;
