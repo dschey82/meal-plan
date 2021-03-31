@@ -12,7 +12,7 @@ const MealSubmit = props => {
 
     const handleMealSubmit = async () => {
         var client = new Client();
-        client.getMealFactsById(0);
+        await client.getMealFactsById(0);
         setInput('');
     };
 
